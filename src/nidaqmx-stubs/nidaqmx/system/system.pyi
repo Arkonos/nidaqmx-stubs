@@ -1,0 +1,46 @@
+from ..constants import SignalModifiers
+from ._collections.device_collection import DeviceCollection
+from ._collections.persisted_channel_collection import (
+    PersistedChannelCollection,
+)
+from ._collections.persisted_scale_collection import (
+    PersistedScaleCollection,
+)
+from ._collections.persisted_task_collection import (
+    PersistedTaskCollection,
+)
+from ..types import DOPowerUpState
+
+class System:
+    @staticmethod
+    def local() -> "System": ...
+    @property
+    def devices(self) -> DeviceCollection: ...
+    @property
+    def driver_version(self) -> tuple[int, int, int]: ...
+    @property
+    def global_channels(self) -> PersistedChannelCollection: ...
+    @property
+    def scales(self) -> PersistedScaleCollection: ...
+    @property
+    def tasks(self) -> PersistedTaskCollection: ...
+    @property
+    def _major_version(self) -> int: ...
+    @property
+    def _minor_version(self) -> int: ...
+    @property
+    def _update_version(self) -> int: ...
+    def connect_terms(
+        self,
+        source_terminal: str,
+        destination_terminal: str,
+        signal_modifiers: SignalModifiers,
+    ) -> None: ...
+    def disconnect_terms(
+        self, source_terminal: str, destination_terminal: str
+    ) -> None: ...
+    def tristate_output_term(self, output_terminal: str) -> None: ...
+    def set_digital_power_up_states(
+        self, device_name: str, power_up_states: list[DOPowerUpState]
+    ) -> None: ...
+    def get_digital_power_up_states(self, device_name: str) -> None: ...

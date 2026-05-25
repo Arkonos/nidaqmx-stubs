@@ -1,0 +1,6 @@
+from enum import Enum
+
+def enum_bitfield_to_list(
+    bitfield_value: int, bitfield_enum_type: Enum, actual_enum_type: Enum
+) -> list[Enum]: ...
+def enum_list_to_bitfield(enum_list: list[Enum], bitfield_enum_type: Enum) -> int: ...

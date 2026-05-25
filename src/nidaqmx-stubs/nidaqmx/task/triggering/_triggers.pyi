@@ -1,0 +1,29 @@
+from ..._grpc_interpreter import GrpcStubInterpreter
+from ...task.triggering._arm_start_trigger import ArmStartTrigger
+from ...task.triggering._handshake_trigger import HandshakeTrigger
+from ...task.triggering._pause_trigger import PauseTrigger
+from ...task.triggering._reference_trigger import ReferenceTrigger
+from ...task.triggering._start_trigger import StartTrigger
+from ..._lib import TaskHandle
+from ...constants import SyncType
+
+class Triggers:
+    def __init__(
+        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+    ) -> None: ...
+    @property
+    def arm_start_trigger(self) -> ArmStartTrigger: ...
+    @property
+    def handshake_trigger(self) -> HandshakeTrigger: ...
+    @property
+    def pause_trigger(self) -> PauseTrigger: ...
+    @property
+    def reference_trigger(self) -> ReferenceTrigger: ...
+    @property
+    def start_trigger(self) -> StartTrigger: ...
+    @property
+    def sync_type(self) -> SyncType: ...
+    @sync_type.setter
+    def sync_type(self, val: SyncType) -> None: ...
+    @sync_type.deleter
+    def sync_type(self) -> None: ...

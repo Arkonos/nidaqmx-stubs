@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nidaqmx"]
+
+[project]
+name = "nidaqmx-stubs"
+version = "0.1.0"
+description = "Inofficial type stubs for nidaqmx"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["nidaqmx", "typing", "stubs", "mypy", "pyright", "pep484", "pep561", "nidaqmx-stubs"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Manufacturing",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Typing :: Stubs Only",
+]
+requires-python = ">=3.9"
+dependencies = [
+  "nidaqmx>=1.5.0",
+  "nitypes",
+  "typing",
+  "pathlib",
+  "datetime",
+  "numpy",
+  "protobuf",
+  "types-protobuf"
+]

@@ -1,0 +1,33 @@
+from numpy import ndarray
+from ..task._task import Task
+
+class UnsetAutoStartSentinel:
+    def __init__(self) -> None: ...
+
+AUTO_START_UNSET = object.__new__(UnsetAutoStartSentinel)
+
+class ChannelWriterBase:
+    def __init__(
+        self,
+        task_out_stream: Task,
+        auto_start: UnsetAutoStartSentinel = AUTO_START_UNSET,
+    ) -> None: ...
+    @property
+    def auto_start(self) -> bool: ...
+    @auto_start.setter
+    def auto_start(self, val: bool) -> None: ...
+    @auto_start.deleter
+    def auto_start(self) -> None: ...
+    @property
+    def verify_array_shape(self) -> bool: ...
+    @verify_array_shape.setter
+    def verify_array_shape(self, val: bool) -> None: ...
+    def _verify_array(
+        self, data: ndarray, is_many_chan: bool, is_many_samp: bool
+    ) -> None: ...
+    def _verify_array_digital_lines(
+        self, data: ndarray, is_many_chan: bool, is_many_line: bool
+    ) -> None: ...
+    def _raise_error_if_invalid_write_dimensions(
+        self, num_dimensions_expected: int, num_dimensions_in_data: int
+    ) -> None: ...
