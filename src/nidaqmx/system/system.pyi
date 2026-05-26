@@ -1,5 +1,7 @@
 from ..constants import SignalModifiers
 from ._collections.device_collection import DeviceCollection
+
+__all__ = ["System"]
 from ._collections.persisted_channel_collection import (
     PersistedChannelCollection,
 )

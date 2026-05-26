@@ -90,3 +90,35 @@ class IDPinContents(NamedTuple):
     """The format code of the binary data."""
 
 # endregion
+
+__all__ = [
+    "CtrFreq",
+    "CtrTick",
+    "CtrTime",
+    "PowerMeasurement",
+    "AOExpirationState",
+    "COExpirationState",
+    "DOExpirationState",
+    "AOPowerUpState",
+    "DOPowerUpState",
+    "DOResistorPowerUpState",
+    "CDAQSyncConnection",
+    "DriverVersion",
+    "IDPinContents",
+]
+
+__all__ = [
+    "CtrFreq",
+    "CtrTick",
+    "CtrTime",
+    "PowerMeasurement",
+    "AOExpirationState",
+    "COExpirationState",
+    "DOExpirationState",
+    "AOPowerUpState",
+    "DOPowerUpState",
+    "DOResistorPowerUpState",
+    "CDAQSyncConnection",
+    "DriverVersion",
+    "IDPinContents",
+]

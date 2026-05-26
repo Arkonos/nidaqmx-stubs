@@ -16,11 +16,19 @@ from .types import CtrFreq, CtrTick, CtrTime
 
 __version__ = version(__name__)
 
-__all__ = [  # noqa: F405 - 'errors' may be undefined, or defined from star imports: nidaqmx.grpc_session_options (auto-generated noqa)
+__all__ = [
+    "DaqError",
+    "DaqReadError",
+    "DaqResourceWarning",
+    "DaqWarning",
+    "DaqWriteError",
+    "Scale",
+    "Task",
+    "CtrFreq",
+    "CtrTick",
+    "CtrTime",
     "errors",
     "scale",
-    "stream_readers",
-    "stream_writers",
     "task",
 ]
 

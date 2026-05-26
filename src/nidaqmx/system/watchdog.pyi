@@ -14,6 +14,8 @@ from ..constants import (
     WDTTaskAction,
 )
 
+__all__ = ["WatchdogTask"]
+
 class WatchdogTask:
     def __init__(
         self,
