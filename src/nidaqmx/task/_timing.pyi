@@ -2,8 +2,7 @@ from typing import NoReturn
 from datetime import datetime
 from ..system.physical_channel import PhysicalChannel
 from ..system.device import Device
-from .._grpc_interpreter import GrpcStubInterpreter
-from .._library_interpreter import LibraryInterpreter
+from .._base_interpreter import BaseInterpreter
 from .._lib import TaskHandle
 from ..constants import (
     AcquisitionType,
@@ -25,7 +24,7 @@ class Timing:
     def __init__(
         self,
         task_handle: TaskHandle,
-        interpreter: GrpcStubInterpreter | LibraryInterpreter,
+        interpreter: BaseInterpreter,
         active_devs: str | Device | None = None,
     ) -> None: ...
     def __getitem__(self, dev: str | Device) -> Timing: ...

@@ -1,4 +1,4 @@
-from .._grpc_interpreter import GrpcStubInterpreter
+from .._base_interpreter import BaseInterpreter
 from ..constants import (
     DeassertCondition,
     DigitalWidthUnits,
@@ -11,7 +11,7 @@ from .._lib import TaskHandle
 
 class ExportSignals:
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     @property
     def adv_cmplt_event_delay(self) -> float: ...

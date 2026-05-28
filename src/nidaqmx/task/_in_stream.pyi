@@ -2,8 +2,7 @@ from typing import Any
 
 from numpy.typing import NDArray
 import pathlib
-from .._grpc_interpreter import GrpcStubInterpreter
-from .._library_interpreter import LibraryInterpreter
+from .._base_interpreter import BaseInterpreter
 from .._lib import TaskHandle
 from ..task.channels import Channel
 from ..constants import (
@@ -36,7 +35,7 @@ class InStream:
     def __init__(
         self,
         task_handle: TaskHandle,
-        interpreter: GrpcStubInterpreter | LibraryInterpreter,
+        interpreter: BaseInterpreter,
     ) -> None: ...
     def __eq__(self, other: Any) -> bool: ...
     def __hash__(self) -> int: ...

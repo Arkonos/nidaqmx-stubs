@@ -93,7 +93,7 @@ class GrpcEventHandler(BaseEventHandler, Generic[TEventResponse]):
     def __init__(
         self,
         event_name: str,
-        interpreter: GrpcStubInterpreter,
+        interpreter: BaseInterpreter,
         event_stream: Iterator[TEventResponse],
         event_callback: Callable[[TEventResponse], None],
     ) -> None: ...

@@ -1,12 +1,12 @@
 from ...task.channels._co_channel import COChannel
 from ...task.collections._channel_collection import ChannelCollection
 from ...constants import FrequencyUnits, Level, TimeUnits
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from ..._lib import TaskHandle
 
 class COChannelCollection(ChannelCollection):
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     def _create_chan(
         self, counter: str, name_to_assign_to_channel: str = ""

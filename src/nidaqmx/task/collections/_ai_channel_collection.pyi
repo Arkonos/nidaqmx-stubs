@@ -1,6 +1,6 @@
 from ...task.channels._ai_channel import AIChannel
 from ...task.collections._channel_collection import ChannelCollection
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from ..._lib import TaskHandle
 from ...constants import (
     ACExcitWireMode,
@@ -45,7 +45,7 @@ from ...constants import (
 
 class AIChannelCollection(ChannelCollection):
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     def _create_chan(
         self, physical_channel: str = "", name_to_assign_to_channel: str = ""

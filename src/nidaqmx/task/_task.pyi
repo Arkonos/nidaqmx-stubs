@@ -6,9 +6,6 @@ import numpy as np
 from numpy.typing import NDArray
 from nitypes.waveform import AnalogWaveform, DigitalWaveform
 from ..grpc_session_options import GrpcSessionOptions
-from ..task.collections._ai_channel_collection import AIChannelCollection
-from ..task.collections._di_channel_collection import DIChannelCollection
-from ..task.collections._do_channel_collection import DOChannelCollection
 from ..task._in_stream import InStream
 from ..task._out_stream import OutStream
 from ..task._timing import Timing
@@ -23,8 +20,7 @@ from ..task._export_signals import ExportSignals
 from ..task.channels._channel import Channel
 from ..task.triggering import Triggers
 from .._lib import TaskHandle
-from .._grpc_interpreter import GrpcStubInterpreter
-from .._library_interpreter import LibraryInterpreter
+from .._base_interpreter import BaseInterpreter
 from ..system.storage.persisted_channel import PersistedChannel
 from .._feature_toggles import requires_feature, WAVEFORM_SUPPORT
 from ..types import CtrFreq, CtrTick, CtrTime, PowerMeasurement
@@ -122,7 +118,7 @@ class Task:
     def _initialize(
         self,
         task_handle: TaskHandle,
-        interpreter: GrpcStubInterpreter | LibraryInterpreter,
+        interpreter: BaseInterpreter,
     ) -> None: ...
     def _calculate_num_samps_per_chan(self, num_samps_per_chan: int) -> int: ...
     def add_global_channels(self, global_channels: list[PersistedChannel]) -> None: ...
@@ -256,7 +252,7 @@ class _TaskAlternateConstructor(Task):
     def __init__(
         self,
         task_handle: TaskHandle,
-        interpreter: GrpcStubInterpreter | LibraryInterpreter,
+        interpreter: BaseInterpreter,
         close_on_exit: bool,
     ) -> None: ...
 

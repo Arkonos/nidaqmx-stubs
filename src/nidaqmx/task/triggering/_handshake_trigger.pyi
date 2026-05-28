@@ -1,5 +1,5 @@
 from ...constants import Level, TriggerType
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from ..._lib import TaskHandle
 
 class HandshakeTrigger:
@@ -10,7 +10,7 @@ class HandshakeTrigger:
     __slots__ = ("_handle", "_interpreter")
 
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     @property
     def interlocked_asserted_lvl(self) -> Level: ...

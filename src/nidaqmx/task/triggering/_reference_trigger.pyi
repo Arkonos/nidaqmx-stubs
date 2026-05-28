@@ -1,5 +1,5 @@
 from datetime import datetime
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from ...system.physical_channel import PhysicalChannel
 from ..._lib import TaskHandle
 from ...constants import (
@@ -14,7 +14,7 @@ from ...constants import (
 
 class ReferenceTrigger:
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     @property
     def anlg_edge_coupling(self) -> Coupling: ...

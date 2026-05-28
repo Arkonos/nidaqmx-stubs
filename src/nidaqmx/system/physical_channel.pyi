@@ -14,8 +14,7 @@ from ..constants import (
 )
 from ..grpc_session_options import GrpcSessionOptions
 from typing import Union
-from .._grpc_interpreter import BaseInterpreter
-from .._library_interpreter import LibraryInterpreter
+from .._base_interpreter import BaseInterpreter
 
 __all__ = ["PhysicalChannel"]
 
@@ -147,6 +146,4 @@ class PhysicalChannel:
     ) -> None: ...
 
 class _PhysicalChannelAlternateConstructor(PhysicalChannel):
-    def __init__(
-        self, name: str, interpreter: BaseInterpreter | LibraryInterpreter
-    ) -> None: ...
+    def __init__(self, name: str, interpreter: BaseInterpreter) -> None: ...

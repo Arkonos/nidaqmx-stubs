@@ -1,4 +1,4 @@
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from ...task.triggering._arm_start_trigger import ArmStartTrigger
 from ...task.triggering._handshake_trigger import HandshakeTrigger
 from ...task.triggering._pause_trigger import PauseTrigger
@@ -9,7 +9,7 @@ from ...constants import SyncType
 
 class Triggers:
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     @property
     def arm_start_trigger(self) -> ArmStartTrigger: ...

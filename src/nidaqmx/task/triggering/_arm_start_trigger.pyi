@@ -5,12 +5,12 @@ from ...constants import (
     Level,
 )
 from ..._lib import TaskHandle
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from datetime import datetime
 
 class ArmStartTrigger:
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     @property
     def dig_edge_dig_fltr_enable(self) -> bool: ...
@@ -93,7 +93,7 @@ class ArmStartTrigger:
 
 class HandshakeTrigger:
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     @property
     def interlocked_asserted_lvl(self) -> Level: ...

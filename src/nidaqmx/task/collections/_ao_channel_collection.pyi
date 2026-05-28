@@ -1,12 +1,12 @@
 from ...task.channels._ao_channel import AOChannel
 from ...task.collections._channel_collection import ChannelCollection
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from ...constants import CurrentUnits, FuncGenType, VoltageUnits
 from ..._lib import TaskHandle
 
 class AOChannelCollection(ChannelCollection):
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     def _create_chan(
         self, physical_channel: str = "", name_to_assign_to_channel: str = ""

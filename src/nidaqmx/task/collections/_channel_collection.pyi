@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 
 from ...task.channels._channel import Channel
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from ..._lib import TaskHandle
 
 class ChannelCollection(Sequence[Channel]):
@@ -11,7 +11,7 @@ class ChannelCollection(Sequence[Channel]):
     This class defines methods that implements a container object.
     """
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     @property
     def all(self) -> Channel: ...

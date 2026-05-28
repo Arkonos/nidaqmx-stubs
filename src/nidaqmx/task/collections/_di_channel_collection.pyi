@@ -1,12 +1,12 @@
 from ...task.channels._di_channel import DIChannel
 from ...task.collections._channel_collection import ChannelCollection
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 from ...constants import LineGrouping
 from ..._lib import TaskHandle
 
 class DIChannelCollection(ChannelCollection):
     def __init__(
-        self, task_handle: TaskHandle, interpreter: GrpcStubInterpreter
+        self, task_handle: TaskHandle, interpreter: BaseInterpreter
     ) -> None: ...
     def _create_chan(
         self,

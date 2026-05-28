@@ -1,7 +1,7 @@
 from ...task._task import Task
 from ...grpc_session_options import GrpcSessionOptions
 from typing import Any
-from ..._grpc_interpreter import GrpcStubInterpreter
+from ..._base_interpreter import BaseInterpreter
 
 class PersistedTask:
     """
@@ -35,5 +35,5 @@ class _PersistedTaskAlternateConstructor(PersistedTask):
     def __init__(
         self,
         name: str,
-        interpreter: GrpcStubInterpreter,
+        interpreter: BaseInterpreter,
     ) -> None: ...
